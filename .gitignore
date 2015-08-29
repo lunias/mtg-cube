@@ -1,0 +1,17 @@
+.classpath
+.loadpath
+.metadata
+.project
+.settings
+.tmp
+.idea
+.gradle
+*.iml
+*.ipr
+*.iws
+*.log
+*.pid
+tmp
+target
+build
+

@@ -1,0 +1,53 @@
+buildscript {
+    ext {
+        springBootVersion = '1.2.5.RELEASE'
+        dependencyManagementVersion = '0.5.2.RELEASE'
+    }
+    repositories {
+        maven { url 'http://repo1.maven.org/maven2' }
+        mavenLocal()
+    }
+    dependencies {
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: springBootVersion
+        classpath group: 'io.spring.gradle', name: 'dependency-management-plugin', version: dependencyManagementVersion
+    }
+}
+
+group 'com.ethanaa'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.7
+
+repositories {
+    maven { url 'http://repo1.maven.org/maven2' }
+    mavenLocal()
+}
+
+ext {
+    groovyVersion = '2.3.11'
+    spockVersion = '1.0-groovy-2.3'
+}
+
+dependencies {
+
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
+
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testCompile group: 'org.spockframework', name: 'spock-spring', version: spockVersion
+    testCompile group: 'org.spockframework', name: 'spock-core', version: spockVersion
+
+    testCompile("cglib:cglib-nodep:3.1")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.5'
+}
