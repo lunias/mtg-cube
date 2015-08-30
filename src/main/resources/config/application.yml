@@ -1,0 +1,7 @@
+spring:
+    jmx:
+        enabled: false
+
+app:
+    ui:
+        title: MTG Cube

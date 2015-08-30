@@ -39,6 +39,7 @@ ext {
 
 dependencies {
 
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter'
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
 
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
