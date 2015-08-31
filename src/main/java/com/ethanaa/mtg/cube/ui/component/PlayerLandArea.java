@@ -1,4 +1,4 @@
-package com.ethanaa.mtg.cube.component;
+package com.ethanaa.mtg.cube.ui.component;
 
 import com.ethanaa.mtg.cube.model.Land;
 import com.ethanaa.mtg.cube.model.LandArea;

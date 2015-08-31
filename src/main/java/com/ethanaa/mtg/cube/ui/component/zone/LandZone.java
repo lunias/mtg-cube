@@ -1,9 +1,9 @@
-package com.ethanaa.mtg.cube.component.zone;
+package com.ethanaa.mtg.cube.ui.component.zone;
 
-import com.ethanaa.mtg.cube.component.Player;
-import com.ethanaa.mtg.cube.component.layer.ZoomLayer;
-import com.ethanaa.mtg.cube.component.node.LandNode;
-import com.ethanaa.mtg.cube.component.node.LandNodeStack;
+import com.ethanaa.mtg.cube.ui.component.Player;
+import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
+import com.ethanaa.mtg.cube.ui.node.LandNode;
+import com.ethanaa.mtg.cube.ui.node.LandNodeStack;
 import com.ethanaa.mtg.cube.model.Land;
 import com.ethanaa.mtg.cube.service.CardService;
 import javafx.collections.ListChangeListener;

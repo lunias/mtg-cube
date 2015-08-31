@@ -1,4 +1,4 @@
-package com.ethanaa.mtg.cube.component.layer;
+package com.ethanaa.mtg.cube.ui.component.layer;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

@@ -1,12 +1,10 @@
-package com.ethanaa.mtg.cube.component.zone;
+package com.ethanaa.mtg.cube.ui.component.zone;
 
-import com.ethanaa.mtg.cube.component.Player;
-import com.ethanaa.mtg.cube.component.Table;
-import com.ethanaa.mtg.cube.component.layer.ZoomLayer;
-import com.ethanaa.mtg.cube.component.node.CardNode;
+import com.ethanaa.mtg.cube.ui.component.Player;
+import com.ethanaa.mtg.cube.ui.component.Table;
+import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
+import com.ethanaa.mtg.cube.ui.node.CardNode;
 import com.ethanaa.mtg.cube.model.Card;
-import com.ethanaa.mtg.cube.service.CardService;
-import javafx.beans.binding.Bindings;
 import javafx.collections.ListChangeListener;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -18,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class HandZone extends HBox {

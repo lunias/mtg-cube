@@ -1,4 +1,4 @@
-package com.ethanaa.mtg.cube.component.zone;
+package com.ethanaa.mtg.cube.ui.component.zone;
 
 
 import javafx.scene.layout.Pane;

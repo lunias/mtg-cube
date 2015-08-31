@@ -1,7 +1,7 @@
-package com.ethanaa.mtg.cube.component.zone;
+package com.ethanaa.mtg.cube.ui.component.zone;
 
-import com.ethanaa.mtg.cube.component.Table;
-import com.ethanaa.mtg.cube.component.node.CardNode;
+import com.ethanaa.mtg.cube.ui.component.Table;
+import com.ethanaa.mtg.cube.ui.node.CardNode;
 import com.ethanaa.mtg.cube.service.CardService;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

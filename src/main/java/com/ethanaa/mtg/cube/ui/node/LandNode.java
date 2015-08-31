@@ -1,4 +1,4 @@
-package com.ethanaa.mtg.cube.component.node;
+package com.ethanaa.mtg.cube.ui.node;
 
 import com.ethanaa.mtg.cube.model.Land;
 import com.ethanaa.mtg.cube.model.exception.CopyException;

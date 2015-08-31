@@ -1,8 +1,8 @@
-package com.ethanaa.mtg.cube.component;
+package com.ethanaa.mtg.cube.ui.component;
 
-import com.ethanaa.mtg.cube.component.layer.ManaPoolLayer;
-import com.ethanaa.mtg.cube.component.layer.ZoomLayer;
-import com.ethanaa.mtg.cube.component.zone.*;
+import com.ethanaa.mtg.cube.ui.component.layer.ManaPoolLayer;
+import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
+import com.ethanaa.mtg.cube.ui.component.zone.*;
 import javafx.scene.layout.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

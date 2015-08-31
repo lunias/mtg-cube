@@ -1,4 +1,4 @@
-package com.ethanaa.mtg.cube.component;
+package com.ethanaa.mtg.cube.ui.component;
 
 
 import com.ethanaa.mtg.cube.model.Card;
@@ -19,6 +19,8 @@ public abstract class PlayerBase {
     protected Library library;
 
     protected Hand hand;
+
+    //protected ManaPool manaPool;
 
     public PlayerBase() {
 

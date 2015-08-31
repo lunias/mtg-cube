@@ -1,7 +1,7 @@
 package com.ethanaa.mtg.cube;
 
 
-import com.ethanaa.mtg.cube.component.Table;
+import com.ethanaa.mtg.cube.ui.component.Table;
 import javafx.application.Preloader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

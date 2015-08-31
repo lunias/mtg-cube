@@ -1,8 +1,8 @@
-package com.ethanaa.mtg.cube.component.layer;
+package com.ethanaa.mtg.cube.ui.component.layer;
 
 
-import com.ethanaa.mtg.cube.component.node.CardNode;
-import com.ethanaa.mtg.cube.component.node.LandNode;
+import com.ethanaa.mtg.cube.ui.node.CardNode;
+import com.ethanaa.mtg.cube.ui.node.LandNode;
 import com.ethanaa.mtg.cube.model.exception.CopyException;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;

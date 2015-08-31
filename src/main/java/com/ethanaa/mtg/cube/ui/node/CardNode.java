@@ -1,7 +1,6 @@
-package com.ethanaa.mtg.cube.component.node;
+package com.ethanaa.mtg.cube.ui.node;
 
 import com.ethanaa.mtg.cube.model.Card;
-import com.ethanaa.mtg.cube.model.Creature;
 import com.ethanaa.mtg.cube.model.exception.CopyException;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.geometry.Insets;

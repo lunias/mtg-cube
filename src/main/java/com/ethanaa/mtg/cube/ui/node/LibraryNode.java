@@ -1,4 +1,4 @@
-package com.ethanaa.mtg.cube.component.node;
+package com.ethanaa.mtg.cube.ui.node;
 
 
 import javafx.scene.layout.StackPane;
