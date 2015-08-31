@@ -4,6 +4,9 @@ package com.ethanaa.mtg.cube.ui.component;
 import com.ethanaa.mtg.cube.model.Card;
 import com.ethanaa.mtg.cube.model.Hand;
 import com.ethanaa.mtg.cube.model.Library;
+import com.ethanaa.mtg.cube.model.ManaPool;
+import com.ethanaa.mtg.cube.model.support.ManaQuantityTuple;
+import com.ethanaa.mtg.cube.model.support.ManaType;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -20,7 +23,7 @@ public abstract class PlayerBase {
 
     protected Hand hand;
 
-    //protected ManaPool manaPool;
+    protected ManaPool manaPool;
 
     public PlayerBase() {
 
@@ -70,6 +73,36 @@ public abstract class PlayerBase {
 
         hand.addCards(cards);
         FXCollections.sort(hand.getCards());
+    }
+
+    public void addManaToPool(ManaType manaType, int quantity) {
+
+        manaPool.add(manaType, quantity);
+    }
+
+    public void addManaToPool(ManaType manaType) {
+
+        manaPool.add(manaType);
+    }
+
+    public void addManaToPool(ManaQuantityTuple manaCostTuple) {
+
+        manaPool.add(manaCostTuple.getType(), manaCostTuple.getQuantity());
+    }
+
+    public void removeManaFromPool(ManaType manaType, int quantity) {
+
+        manaPool.remove(manaType, quantity);
+    }
+
+    public void removeManaFromPool(ManaType manaType) {
+
+        manaPool.remove(manaType);
+    }
+
+    public void removeManaFromPool(ManaQuantityTuple manaCostTuple) {
+
+        manaPool.remove(manaCostTuple.getType(), manaCostTuple.getQuantity());
     }
 
     public int modifyLifeTotal(int numLifePoints) {

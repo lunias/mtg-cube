@@ -4,29 +4,29 @@ import java.util.*;
 
 public class ManaCost implements Comparable<ManaCost> {
 
-    private Map<ManaType, ManaCostTuple> manaCosts = new HashMap<>();
+    private Map<ManaType, ManaQuantityTuple> manaCosts = new HashMap<>();
 
-    public ManaCost(ManaCostTuple... manaCostTuples) {
+    public ManaCost(ManaQuantityTuple... manaCostTuples) {
 
-        for (ManaCostTuple manaCostTuple : manaCostTuples) {
+        for (ManaQuantityTuple manaCostTuple : manaCostTuples) {
             manaCosts.put(manaCostTuple.getType(), manaCostTuple);
         }
     }
 
     public ManaCost(ManaCost manaCost) {
 
-        for (ManaCostTuple manaCostTuple : manaCost.getManaCosts().values()) {
-            manaCosts.put(manaCostTuple.getType(), new ManaCostTuple(manaCostTuple));
+        for (ManaQuantityTuple manaCostTuple : manaCost.getManaCosts().values()) {
+            manaCosts.put(manaCostTuple.getType(), new ManaQuantityTuple(manaCostTuple));
         }
     }
 
-    public Map<ManaType, ManaCostTuple> getManaCosts() {
+    public Map<ManaType, ManaQuantityTuple> getManaCosts() {
         return manaCosts;
     }
 
-    public List<ManaCostTuple> getManaCostsSorted() {
+    public List<ManaQuantityTuple> getManaCostsSorted() {
 
-        List<ManaCostTuple> manaCostTuples = new ArrayList<>(manaCosts.values());
+        List<ManaQuantityTuple> manaCostTuples = new ArrayList<>(manaCosts.values());
 
         Collections.sort(manaCostTuples);
 
@@ -36,14 +36,14 @@ public class ManaCost implements Comparable<ManaCost> {
     public int getConvertedManaCost() {
 
         int sum = 0;
-        for (ManaCostTuple manaCostTuple : manaCosts.values()) {
+        for (ManaQuantityTuple manaCostTuple : manaCosts.values()) {
             sum += manaCostTuple.getQuantity();
         }
 
         return sum;
     }
 
-    public void setManaCosts(Map<ManaType, ManaCostTuple> manaCosts) {
+    public void setManaCosts(Map<ManaType, ManaQuantityTuple> manaCosts) {
         this.manaCosts = manaCosts;
     }
 
@@ -74,7 +74,7 @@ public class ManaCost implements Comparable<ManaCost> {
 
         StringBuilder sb = new StringBuilder();
 
-        for (ManaCostTuple manaCostTuple : getManaCostsSorted()) {
+        for (ManaQuantityTuple manaCostTuple : getManaCostsSorted()) {
             sb.append("(" + manaCostTuple.getQuantity() + "" + manaCostTuple.getType() + ")");
         }
 

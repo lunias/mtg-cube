@@ -25,7 +25,7 @@ apply plugin: 'maven'
 apply plugin: 'spring-boot'
 apply plugin: 'io.spring.dependency-management'
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 repositories {
     maven { url 'http://repo1.maven.org/maven2' }

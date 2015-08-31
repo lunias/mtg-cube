@@ -2,13 +2,15 @@ package com.ethanaa.mtg.cube.model.support;
 
 public enum ManaType {
 
-    COLORLESS("C"), RED("R"), GREEN("G"), BLUE("U"), WHITE("W"), BLACK("B");
+    COLORLESS("C", "#bcbfb6"), RED("R", "#faaa8f"), GREEN("G", "#9bd3ae"), BLUE("U", "#aae0fa"), WHITE("W", "#fffcd6"), BLACK("B", "#ccc2c0");
 
     private String abbreviation;
+    private String hexColor;
 
-    ManaType(String abbreviation) {
+    ManaType(String abbreviation, String hexColor) {
 
         this.abbreviation = abbreviation;
+        this.hexColor = hexColor;
     }
 
     public String getAbbreviation() {
@@ -17,6 +19,14 @@ public enum ManaType {
 
     public void setAbbreviation(String abbreviation) {
         this.abbreviation = abbreviation;
+    }
+
+    public String getHexColor() {
+        return hexColor;
+    }
+
+    public void setHexColor(String hexColor) {
+        this.hexColor = hexColor;
     }
 
     @Override

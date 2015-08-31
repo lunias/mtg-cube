@@ -3,7 +3,7 @@ package com.ethanaa.mtg.cube.model
 import com.ethanaa.mtg.cube.model.support.CardType
 import com.ethanaa.mtg.cube.model.support.Expansion
 import com.ethanaa.mtg.cube.model.support.ManaCost
-import com.ethanaa.mtg.cube.model.support.ManaCostTuple
+import com.ethanaa.mtg.cube.model.support.ManaQuantityTuple
 import com.ethanaa.mtg.cube.model.support.ManaType
 import com.ethanaa.mtg.cube.model.support.Rarity
 import spock.lang.Specification
@@ -11,7 +11,7 @@ import spock.lang.Specification
 class CreatureTest extends Specification {
 
     final static String DEFAULT_NAME = "Disenchant"
-    final static ManaCost DEFAULT_MANA_COST = new ManaCost(new ManaCostTuple(1, ManaType.COLORLESS))
+    final static ManaCost DEFAULT_MANA_COST = new ManaCost(new ManaQuantityTuple(1, ManaType.COLORLESS))
     final static CardType DEFAULT_CARD_TYPE = CardType.ARTIFACT
     final static Set<String> DEFAULT_SUB_TYPES = new HashSet<>()
     final static String DEFAULT_TEXT = "test"
@@ -82,7 +82,7 @@ class CreatureTest extends Specification {
         given: "4 shuffled creature cards with differing mana costs"
 
         Creature lowCard = new Creature(DEFAULT_NAME, new ManaCost(
-                new ManaCostTuple(0, ManaType.COLORLESS)),
+                new ManaQuantityTuple(0, ManaType.COLORLESS)),
                 DEFAULT_SUB_TYPES, DEFAULT_TEXT,
                 DEFAULT_POWER, DEFAULT_TOUGHNESS,
                 DEFAULT_EXPANSION, DEFAULT_RARITY);
@@ -98,8 +98,8 @@ class CreatureTest extends Specification {
                 DEFAULT_EXPANSION, DEFAULT_RARITY);
 
         Creature highCard = new Creature(DEFAULT_NAME, new ManaCost(
-                new ManaCostTuple(3, ManaType.COLORLESS),
-                new ManaCostTuple(2, ManaType.RED)),
+                new ManaQuantityTuple(3, ManaType.COLORLESS),
+                new ManaQuantityTuple(2, ManaType.RED)),
                 DEFAULT_SUB_TYPES, DEFAULT_TEXT,
                 DEFAULT_POWER, DEFAULT_TOUGHNESS,
                 DEFAULT_EXPANSION, DEFAULT_RARITY);

@@ -1,5 +1,6 @@
 package com.ethanaa.mtg.cube.ui.component.zone;
 
+import com.ethanaa.mtg.cube.model.support.ManaQuantityTuple;
 import com.ethanaa.mtg.cube.ui.component.Player;
 import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
 import com.ethanaa.mtg.cube.ui.node.LandNode;
@@ -18,6 +19,7 @@ import javafx.scene.layout.GridPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -145,7 +147,21 @@ public class LandZone extends GridPane {
 
         node.setOnMouseClicked(me -> {
             if (me.getButton() != MouseButton.SECONDARY) {
+
                 node.tap();
+
+                List<ManaQuantityTuple> manaProduces =
+                        node.getLand().getProduces().getManaCostsSorted();
+
+                if (node.getLand().isTapped()) {
+                    for (ManaQuantityTuple mct : manaProduces) {
+                        player.addManaToPool(mct);
+                    }
+                } else {
+                    for (ManaQuantityTuple mct : manaProduces) {
+                        player.removeManaFromPool(mct);
+                    }
+                }
             }
         });
 

@@ -3,8 +3,10 @@ package com.ethanaa.mtg.cube.ui.component;
 import com.ethanaa.mtg.cube.model.Card;
 import com.ethanaa.mtg.cube.model.Land;
 import com.ethanaa.mtg.cube.model.exception.CopyException;
+import com.ethanaa.mtg.cube.model.support.ManaType;
 import com.ethanaa.mtg.cube.service.CardService;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,20 +19,24 @@ public class Player extends PlayerBase {
 
     private PlayerHand playerHand;
     private PlayerLandArea playerLandArea;
+    private PlayerManaPool playerManaPool;
     private PlayerLibrary playerLibrary;
 
     @Autowired
     public Player(PlayerHand playerHand,
                   PlayerLibrary playerLibrary,
                   PlayerLandArea playerLandArea,
+                  PlayerManaPool playerManaPool,
                   CardService cardService) {
 
         this.playerHand = playerHand;
         this.playerLandArea = playerLandArea;
+        this.playerManaPool = playerManaPool;
         this.playerLibrary = playerLibrary;
 
         this.library = playerLibrary.getLibrary();
         this.hand = playerHand.getHand();
+        this.manaPool = playerManaPool.getManaPool();
 
         this.cardService = cardService;
     }
@@ -80,6 +86,16 @@ public class Player extends PlayerBase {
     public PlayerLandArea getPlayerLandArea() {
 
         return playerLandArea;
+    }
+
+    public PlayerManaPool getPlayerManaPool() {
+
+        return playerManaPool;
+    }
+
+    public ObservableMap<ManaType, Integer> getManaTypeCounts() {
+
+        return playerManaPool.getManaTypeCounts();
     }
 
     public Map<Integer, ObservableList<Land>> getLandStackMap() {

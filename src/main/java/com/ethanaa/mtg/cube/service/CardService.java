@@ -33,8 +33,8 @@ public class CardService {
 
         name = "Accorder Paladin";
         cardMap.put(name, new Creature(name,
-                new ManaCost(new ManaCostTuple(1, ManaType.COLORLESS),
-                        new ManaCostTuple(1, ManaType.WHITE)),
+                new ManaCost(new ManaQuantityTuple(1, ManaType.COLORLESS),
+                        new ManaQuantityTuple(1, ManaType.WHITE)),
                 new HashSet<>(Arrays.asList("Human", "Knight")),
                 "Battle cry (Whenever this creature attacks, each other " +
                         "attacking creature gets +1/+0 until end of turn.)",
@@ -43,32 +43,32 @@ public class CardService {
 
         name = "Aetherling";
         cardMap.put(name, new Creature(name,
-                new ManaCost(new ManaCostTuple(4, ManaType.COLORLESS),
-                        new ManaCostTuple(2, ManaType.BLUE)),
+                new ManaCost(new ManaQuantityTuple(4, ManaType.COLORLESS),
+                        new ManaQuantityTuple(2, ManaType.BLUE)),
                 new HashSet<>(Arrays.asList("Shapeshifter")),
-                "{U}: Exile Ætherling. Return it to the battlefield under " +
+                "{U}: Exile ï¿½therling. Return it to the battlefield under " +
                         "its owner's control at the beginning of the next end step.\n" +
                         "\n" +
-                        "{U}: Ætherling can't be blocked this turn.\n" +
+                        "{U}: ï¿½therling can't be blocked this turn.\n" +
                         "\n" +
-                        "{1}: Ætherling gets +1/-1 until end of turn.\n" +
+                        "{1}: ï¿½therling gets +1/-1 until end of turn.\n" +
                         "\n" +
-                        "{1}: Ætherling gets -1/+1 until end of turn.",
+                        "{1}: ï¿½therling gets -1/+1 until end of turn.",
                 4, 5,
                 Expansion.ALPHA, Rarity.RARE));
 
         name = "Armageddon";
         cardMap.put(name, new Sorcery(name,
-                new ManaCost(new ManaCostTuple(3, ManaType.COLORLESS),
-                        new ManaCostTuple(1, ManaType.WHITE)),
+                new ManaCost(new ManaQuantityTuple(3, ManaType.COLORLESS),
+                        new ManaQuantityTuple(1, ManaType.WHITE)),
                 new HashSet<>(),
                 "Destroy all lands.",
                 Expansion.ALPHA, Rarity.RARE));
 
         name = "Balance";
         cardMap.put(name, new Sorcery(name,
-                new ManaCost(new ManaCostTuple(1, ManaType.COLORLESS),
-                        new ManaCostTuple(1, ManaType.WHITE)),
+                new ManaCost(new ManaQuantityTuple(1, ManaType.COLORLESS),
+                        new ManaQuantityTuple(1, ManaType.WHITE)),
                 new HashSet<>(),
                 "Each player chooses a number of lands he or she controls " +
                         "equal to the number of lands controlled by the player " +
@@ -78,8 +78,8 @@ public class CardService {
 
         name = "Baneslayer Angel";
         cardMap.put(name, new Creature(name,
-                new ManaCost(new ManaCostTuple(3, ManaType.COLORLESS),
-                        new ManaCostTuple(2, ManaType.WHITE)),
+                new ManaCost(new ManaQuantityTuple(3, ManaType.COLORLESS),
+                        new ManaQuantityTuple(2, ManaType.WHITE)),
                 new HashSet<>(Arrays.asList("Angel")),
                 "Flying, first strike, lifelink, protection from Demons and from Dragons",
                 5, 5,
@@ -87,8 +87,8 @@ public class CardService {
 
         name = "Blade Splicer";
         cardMap.put(name, new Creature(name,
-                new ManaCost(new ManaCostTuple(2, ManaType.COLORLESS),
-                        new ManaCostTuple(1, ManaType.WHITE)),
+                new ManaCost(new ManaQuantityTuple(2, ManaType.COLORLESS),
+                        new ManaQuantityTuple(1, ManaType.WHITE)),
                 new HashSet<>(Arrays.asList("Human", "Artificer")),
                 "When Blade Splicer enters the battlefield, put a 3/3 colorless Golem artifact " +
                         "creature token onto the battlefield.\n" +
@@ -99,8 +99,8 @@ public class CardService {
 
         name = "Brimaz, King of Oreskos";
         cardMap.put(name, new Creature(name,
-                new ManaCost(new ManaCostTuple(1, ManaType.COLORLESS),
-                        new ManaCostTuple(2, ManaType.WHITE)),
+                new ManaCost(new ManaQuantityTuple(1, ManaType.COLORLESS),
+                        new ManaQuantityTuple(2, ManaType.WHITE)),
                 new HashSet<>(Arrays.asList("Cat", "Soldier")),
                 "Vigilance\n" +
                         "\n" +

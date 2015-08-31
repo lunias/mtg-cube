@@ -20,6 +20,11 @@
 	-fx-border-color: black;
 }
 
+.manaQuantityLabel {
+    -fx-font: bold 20pt "Arial";
+    -fx-text-fill: #000;
+}
+
 .landZone {
     -fx-background-color: derive(slategrey, 10%);
 }
