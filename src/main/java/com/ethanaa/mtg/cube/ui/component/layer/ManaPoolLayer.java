@@ -61,7 +61,6 @@ public class ManaPoolLayer extends AnchorPane {
 
         player.getManaTypeCounts().addListener((
                 MapChangeListener.Change<? extends ManaType, ? extends Integer> c) -> {
-
             if (c.wasAdded()) {
 
                 ManaType modifiedManaType = c.getKey();

@@ -1,9 +1,13 @@
 package com.ethanaa.mtg.cube.model;
 
 
+import com.ethanaa.mtg.cube.model.support.ManaCost;
+import com.ethanaa.mtg.cube.model.support.ManaQuantityTuple;
 import com.ethanaa.mtg.cube.model.support.ManaType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
+
+import java.util.Map;
 
 public class ManaPool {
 
@@ -22,6 +26,27 @@ public class ManaPool {
         }
 
         return manaCount;
+    }
+
+    public boolean hasEnoughMana(ManaCost manaCost) {
+
+        if (getTotalManaInPool() < manaCost.getConvertedManaCost()) {
+            return false;
+        }
+
+        for (Map.Entry<ManaType, ManaQuantityTuple> entry : manaCost.getManaCosts().entrySet()) {
+
+            ManaType manaType = entry.getKey();
+            ManaQuantityTuple manaQuantityTuple = entry.getValue();
+
+            if (manaType == ManaType.COLORLESS) continue;
+
+            if (manaTypeCounts.get(manaType) < manaQuantityTuple.getQuantity()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void add(ManaType manaType, int quantity) {
@@ -60,6 +85,11 @@ public class ManaPool {
     public void clear() {
 
         manaTypeCounts.clear();
+    }
+
+    public int getTotalManaInPool() {
+
+        return manaTypeCounts.values().stream().mapToInt(i -> i.intValue()).sum();
     }
 
     public ObservableMap<ManaType, Integer> getManaTypeCounts() {

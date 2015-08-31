@@ -70,6 +70,11 @@ public class Player extends PlayerBase {
         addCardsToHand(drawFromLibrary(numToDraw).toArray(new Card[]{}));
     }
 
+    public boolean canPlay(Card card) {
+
+        return hasEnoughMana(card);
+    }
+
     public void play(Card card) {
 
         if (card instanceof Land) {

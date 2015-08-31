@@ -1,13 +1,16 @@
 package com.ethanaa.mtg.cube.ui.component.zone;
 
+import com.ethanaa.mtg.cube.model.support.ManaType;
 import com.ethanaa.mtg.cube.ui.component.Player;
 import com.ethanaa.mtg.cube.ui.component.Table;
 import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
 import com.ethanaa.mtg.cube.ui.node.CardNode;
 import com.ethanaa.mtg.cube.model.Card;
 import javafx.collections.ListChangeListener;
+import javafx.collections.MapChangeListener;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -70,11 +73,30 @@ public class HandZone extends HBox {
                 }
             }
         });
+
+        player.getManaTypeCounts().addListener((
+                MapChangeListener.Change<? extends ManaType, ? extends Integer> c) -> {
+
+            //if (c.wasAdded()) {
+                for (Node node : getChildren()) {
+                    if (node instanceof CardNode) {
+                        Card card = ((CardNode) node).getCard();
+                        if (player.canPlay(card)) {
+                            node.getStyleClass().add("handCardPlayable");
+                        } else {
+                            node.getStyleClass().remove("handCardPlayable");
+                        }
+                    }
+                }
+            //}
+        });
     }
 
     private CardNode createHandCard(Card card) {
 
         CardNode node = new CardNode(card);
+
+        node.getStyleClass().add("handCard");
 
         node.setOnMousePressed(me -> {
             if (me.getButton() == MouseButton.PRIMARY) {

@@ -5,6 +5,7 @@ import com.ethanaa.mtg.cube.model.Card;
 import com.ethanaa.mtg.cube.model.Hand;
 import com.ethanaa.mtg.cube.model.Library;
 import com.ethanaa.mtg.cube.model.ManaPool;
+import com.ethanaa.mtg.cube.model.support.ManaCost;
 import com.ethanaa.mtg.cube.model.support.ManaQuantityTuple;
 import com.ethanaa.mtg.cube.model.support.ManaType;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -103,6 +104,13 @@ public abstract class PlayerBase {
     public void removeManaFromPool(ManaQuantityTuple manaCostTuple) {
 
         manaPool.remove(manaCostTuple.getType(), manaCostTuple.getQuantity());
+    }
+
+    public boolean hasEnoughMana(Card card) {
+
+        ManaCost cardCost = card.getManaCost();
+
+        return manaPool.hasEnoughMana(cardCost);
     }
 
     public int modifyLifeTotal(int numLifePoints) {
