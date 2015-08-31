@@ -11,6 +11,8 @@ public abstract class Land extends Card implements Comparable<Card> {
 
     private ManaCost produces;
 
+    private boolean isTapped = false;
+
     public Land(String name, ManaCost manaCost,
                 CardType type, Set<String> subTypes,
                 String text, Expansion expansion, Rarity rarity) {
@@ -40,4 +42,11 @@ public abstract class Land extends Card implements Comparable<Card> {
         this.produces = produces;
     }
 
+    public boolean isTapped() {
+        return isTapped;
+    }
+
+    public void setIsTapped(boolean isTapped) {
+        this.isTapped = isTapped;
+    }
 }

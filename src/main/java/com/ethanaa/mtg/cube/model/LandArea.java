@@ -24,6 +24,7 @@ public class LandArea {
 
     public void addLand(Land land) {
 
+        ObservableList<Land> smallestLandStack = landStackMap.get(0);
         for (Map.Entry<Integer, ObservableList<Land>> entry : landStackMap.entrySet()) {
 
             ObservableList<Land> landStack = entry.getValue();
@@ -38,7 +39,13 @@ public class LandArea {
                 landStack.add(land);
                 return;
             }
+
+            if (landStack.size() < smallestLandStack.size()) {
+                smallestLandStack = landStack;
+            }
         }
+
+        smallestLandStack.add(land);
     }
 
     private boolean stackContainsSameType(ObservableList<Land> landStack, Land land) {

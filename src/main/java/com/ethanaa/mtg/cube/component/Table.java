@@ -1,5 +1,6 @@
 package com.ethanaa.mtg.cube.component;
 
+import com.ethanaa.mtg.cube.component.layer.ManaPoolLayer;
 import com.ethanaa.mtg.cube.component.layer.ZoomLayer;
 import com.ethanaa.mtg.cube.component.zone.*;
 import javafx.scene.layout.*;
@@ -18,11 +19,12 @@ public class Table extends StackPane {
     private LandZone landZone;
 
     private ZoomLayer zoomLayer;
+    private ManaPoolLayer manaPoolLayer;
 
     @Autowired
     public Table(OpponentHandZone opponentHandZone,
                  Player player, HandZone handZone, LandZone landZone,
-                 ZoomLayer zoomLayer) {
+                 ZoomLayer zoomLayer, ManaPoolLayer manaPoolLayer) {
 
         this.opponentHandZone = opponentHandZone;
 
@@ -31,6 +33,7 @@ public class Table extends StackPane {
         this.landZone = landZone;
 
         this.zoomLayer = zoomLayer;
+        this.manaPoolLayer = manaPoolLayer;
 
         player.initializePlayer();
 
@@ -43,7 +46,8 @@ public class Table extends StackPane {
                 createTable(),
                 createHands(),
                 createEffectsOverlay(),
-                zoomLayer
+                zoomLayer,
+                manaPoolLayer
                 );
     }
 

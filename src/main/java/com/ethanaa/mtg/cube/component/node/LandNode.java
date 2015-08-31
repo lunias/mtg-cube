@@ -33,6 +33,22 @@ public class LandNode extends StackPane {
         setMaxHeight(222.5);
     }
 
+    public void tap() {
+
+        if (land.isTapped()) {
+            setRotate(0.0);
+            land.setIsTapped(false);
+        } else {
+            setRotate(90.0);
+            land.setIsTapped(true);
+        }
+    }
+
+    public boolean isTapped() {
+
+        return land.isTapped();
+    }
+
     public Land getLand() {
         return land;
     }

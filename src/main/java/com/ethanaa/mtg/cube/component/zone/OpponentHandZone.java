@@ -3,6 +3,7 @@ package com.ethanaa.mtg.cube.component.zone;
 import com.ethanaa.mtg.cube.component.Table;
 import com.ethanaa.mtg.cube.component.node.CardNode;
 import com.ethanaa.mtg.cube.service.CardService;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -28,6 +29,7 @@ public class OpponentHandZone extends HBox {
     private void initZone() {
 
         getStyleClass().add("opponentHand");
+        setPadding(new Insets(5.0));
         setSpacing(5);
         setAlignment(Pos.CENTER);
 

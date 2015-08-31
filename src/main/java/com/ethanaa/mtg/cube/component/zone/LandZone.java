@@ -110,6 +110,7 @@ public class LandZone extends GridPane {
                                         && getColumnIndex(landNodeStack) == column) {
 
                                     ((LandNodeStack) landNodeStack).removeLandNode(new LandNode(land));
+                                    break;
                                 }
                             }
                         }
@@ -121,6 +122,7 @@ public class LandZone extends GridPane {
                                         && getColumnIndex(landNodeStack) == column) {
 
                                     ((LandNodeStack) landNodeStack).addLandNode(createLandNode(land));
+                                    break;
                                 }
                             }
                         }
@@ -142,11 +144,8 @@ public class LandZone extends GridPane {
         LandNode node = new LandNode(land);
 
         node.setOnMouseClicked(me -> {
-
-            if (me.getButton().equals(MouseButton.SECONDARY)) {
-                node.setRotate(0.0);
-            } else {
-                node.setRotate(90.0);
+            if (me.getButton() != MouseButton.SECONDARY) {
+                node.tap();
             }
         });
 
