@@ -3,6 +3,7 @@ package com.ethanaa.mtg.cube.ui.component;
 import com.ethanaa.mtg.cube.model.Card;
 import com.ethanaa.mtg.cube.model.Land;
 import com.ethanaa.mtg.cube.model.exception.CopyException;
+import com.ethanaa.mtg.cube.model.support.CardType;
 import com.ethanaa.mtg.cube.model.support.ManaType;
 import com.ethanaa.mtg.cube.service.CardService;
 import javafx.collections.ObservableList;
@@ -71,6 +72,10 @@ public class Player extends PlayerBase {
     }
 
     public boolean canPlay(Card card) {
+
+        if (card.getType() == CardType.LAND) {
+            return true;
+        }
 
         return hasEnoughMana(card);
     }

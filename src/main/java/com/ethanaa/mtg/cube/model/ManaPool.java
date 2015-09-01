@@ -41,7 +41,7 @@ public class ManaPool {
 
             if (manaType == ManaType.COLORLESS) continue;
 
-            if (manaTypeCounts.get(manaType) < manaQuantityTuple.getQuantity()) {
+            if (getManaCount(manaType) < manaQuantityTuple.getQuantity()) {
                 return false;
             }
         }

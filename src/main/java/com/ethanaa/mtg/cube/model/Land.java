@@ -27,6 +27,7 @@ public abstract class Land extends Card implements Comparable<Card> {
         super(name, produces);
 
         this.produces = produces;
+        this.setType(CardType.LAND);
     }
 
     public Land(Land land) {

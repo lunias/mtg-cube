@@ -56,6 +56,7 @@ public class LandZone extends GridPane {
         for (int i = 0; i < 6; i++) {
             add(createLandNodeStack(), i, 0, 1, 1);
         }
+
         // deck
         add(libraryZone, 6, 0, 1, 1);
 

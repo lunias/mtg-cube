@@ -1,11 +1,14 @@
 package com.ethanaa.mtg.cube.ui.component.zone;
 
+import com.ethanaa.mtg.cube.model.Land;
+import com.ethanaa.mtg.cube.model.support.CardType;
 import com.ethanaa.mtg.cube.model.support.ManaType;
 import com.ethanaa.mtg.cube.ui.component.Player;
 import com.ethanaa.mtg.cube.ui.component.Table;
 import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
 import com.ethanaa.mtg.cube.ui.node.CardNode;
 import com.ethanaa.mtg.cube.model.Card;
+import com.ethanaa.mtg.cube.ui.node.LandNode;
 import javafx.collections.ListChangeListener;
 import javafx.collections.MapChangeListener;
 import javafx.geometry.Insets;
@@ -75,10 +78,10 @@ public class HandZone extends HBox {
         });
 
         player.getManaTypeCounts().addListener((
-                MapChangeListener.Change<? extends ManaType, ? extends Integer> c) -> {
 
-            //if (c.wasAdded()) {
+                MapChangeListener.Change<? extends ManaType, ? extends Integer> c) -> {
                 for (Node node : getChildren()) {
+
                     if (node instanceof CardNode) {
                         Card card = ((CardNode) node).getCard();
                         if (player.canPlay(card)) {
@@ -86,9 +89,16 @@ public class HandZone extends HBox {
                         } else {
                             node.getStyleClass().remove("handCardPlayable");
                         }
+
+                    } else if (node instanceof LandNode) {
+                        Land land = ((LandNode) node).getLand();
+                        if (player.canPlay(land)) {
+                            node.getStyleClass().add("handLandPlayable");
+                        } else {
+                            node.getStyleClass().remove("handLandPlayable");
+                        }
                     }
                 }
-            //}
         });
     }
 
@@ -97,6 +107,11 @@ public class HandZone extends HBox {
         CardNode node = new CardNode(card);
 
         node.getStyleClass().add("handCard");
+
+        if (player.canPlay(card)) {
+            node.getStyleClass().add(card.getType() == CardType.LAND ?
+                    "handLandPlayable" : "handCardPlayable");
+        }
 
         node.setOnMousePressed(me -> {
             if (me.getButton() == MouseButton.PRIMARY) {
