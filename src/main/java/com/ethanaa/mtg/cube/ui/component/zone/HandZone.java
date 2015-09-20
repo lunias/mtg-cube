@@ -80,22 +80,31 @@ public class HandZone extends HBox {
         player.getManaTypeCounts().addListener((
 
                 MapChangeListener.Change<? extends ManaType, ? extends Integer> c) -> {
+
                 for (Node node : getChildren()) {
 
                     if (node instanceof CardNode) {
+
                         Card card = ((CardNode) node).getCard();
+
+                        node.getStyleClass().clear();
+
                         if (player.canPlay(card)) {
                             node.getStyleClass().add("handCardPlayable");
                         } else {
-                            node.getStyleClass().remove("handCardPlayable");
+                            node.getStyleClass().add("handCard");
                         }
 
                     } else if (node instanceof LandNode) {
+
                         Land land = ((LandNode) node).getLand();
+
+                        node.getStyleClass().clear();
+
                         if (player.canPlay(land)) {
                             node.getStyleClass().add("handLandPlayable");
                         } else {
-                            node.getStyleClass().remove("handLandPlayable");
+                            node.getStyleClass().add("handCard");
                         }
                     }
                 }
