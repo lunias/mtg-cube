@@ -1,7 +1,7 @@
 package com.ethanaa.mtg.cube.ui.component.zone;
 
 
-import com.ethanaa.mtg.cube.ui.component.Player;
+import com.ethanaa.mtg.cube.game.Player;
 import com.ethanaa.mtg.cube.ui.node.LibraryNode;
 import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;

@@ -1,10 +1,6 @@
-package com.ethanaa.mtg.cube.ui.component;
+package com.ethanaa.mtg.cube.game;
 
-
-import com.ethanaa.mtg.cube.model.Card;
-import com.ethanaa.mtg.cube.model.Hand;
-import com.ethanaa.mtg.cube.model.Library;
-import com.ethanaa.mtg.cube.model.ManaPool;
+import com.ethanaa.mtg.cube.model.*;
 import com.ethanaa.mtg.cube.model.support.ManaCost;
 import com.ethanaa.mtg.cube.model.support.ManaQuantityTuple;
 import com.ethanaa.mtg.cube.model.support.ManaType;
@@ -26,9 +22,19 @@ public abstract class PlayerBase {
 
     protected ManaPool manaPool;
 
+    protected PlayArea playArea;
+
     public PlayerBase() {
 
     }
+
+    public abstract Library getLibrary();
+
+    public abstract Hand getHand();
+
+    public abstract ManaPool getManaPool();
+
+    public abstract PlayArea getPlayArea();
 
     public void shuffleLibrary() {
 

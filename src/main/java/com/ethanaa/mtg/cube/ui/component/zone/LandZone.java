@@ -1,7 +1,7 @@
 package com.ethanaa.mtg.cube.ui.component.zone;
 
 import com.ethanaa.mtg.cube.model.support.ManaQuantityTuple;
-import com.ethanaa.mtg.cube.ui.component.Player;
+import com.ethanaa.mtg.cube.game.Player;
 import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
 import com.ethanaa.mtg.cube.ui.node.LandNode;
 import com.ethanaa.mtg.cube.ui.node.LandNodeStack;

@@ -21,8 +21,6 @@ public class MtgCube extends JavaFxApplicationSupport {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        notifyPreloader(new Preloader.StateChangeNotification(Preloader.StateChangeNotification.Type.BEFORE_START));
-
         primaryStage.setTitle(windowTitle);
 
         Scene tableScene = new Scene(table);

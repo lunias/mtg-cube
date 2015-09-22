@@ -3,9 +3,9 @@ package com.ethanaa.mtg.cube.ui.component.zone;
 
 import javafx.scene.layout.Pane;
 
-public class OpponentManaZone extends Pane {
+public class OpponentLandZone extends Pane {
 
-    public OpponentManaZone() {
+    public OpponentLandZone() {
         initZone();
     }
 

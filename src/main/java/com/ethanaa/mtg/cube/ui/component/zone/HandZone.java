@@ -3,7 +3,7 @@ package com.ethanaa.mtg.cube.ui.component.zone;
 import com.ethanaa.mtg.cube.model.Land;
 import com.ethanaa.mtg.cube.model.support.CardType;
 import com.ethanaa.mtg.cube.model.support.ManaType;
-import com.ethanaa.mtg.cube.ui.component.Player;
+import com.ethanaa.mtg.cube.game.Player;
 import com.ethanaa.mtg.cube.ui.component.Table;
 import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
 import com.ethanaa.mtg.cube.ui.node.CardNode;

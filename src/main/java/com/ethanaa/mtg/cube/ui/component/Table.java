@@ -1,5 +1,6 @@
 package com.ethanaa.mtg.cube.ui.component;
 
+import com.ethanaa.mtg.cube.game.Player;
 import com.ethanaa.mtg.cube.ui.component.layer.ManaPoolLayer;
 import com.ethanaa.mtg.cube.ui.component.layer.ZoomLayer;
 import com.ethanaa.mtg.cube.ui.component.zone.*;
@@ -55,8 +56,8 @@ public class Table extends StackPane {
 
         VBox table = new VBox();
 
-        OpponentManaZone opponentManaZone = new OpponentManaZone();
-        VBox.setVgrow(opponentManaZone, Priority.ALWAYS);
+        OpponentLandZone opponentLandZone = new OpponentLandZone();
+        VBox.setVgrow(opponentLandZone, Priority.ALWAYS);
 
         OpponentPlayZone opponentPlayZone = new OpponentPlayZone();
         VBox.setVgrow(opponentPlayZone, Priority.ALWAYS);
@@ -65,7 +66,7 @@ public class Table extends StackPane {
         VBox.setVgrow(playZone, Priority.ALWAYS);
 
         table.getChildren().addAll(
-                opponentManaZone,
+                opponentLandZone,
                 opponentPlayZone,
                 playZone,
                 landZone

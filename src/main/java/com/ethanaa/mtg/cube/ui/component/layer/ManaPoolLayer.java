@@ -1,8 +1,7 @@
 package com.ethanaa.mtg.cube.ui.component.layer;
 
 import com.ethanaa.mtg.cube.model.support.ManaType;
-import com.ethanaa.mtg.cube.ui.component.Player;
-import javafx.beans.binding.Bindings;
+import com.ethanaa.mtg.cube.game.Player;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.MapChangeListener;
 import javafx.geometry.Insets;
